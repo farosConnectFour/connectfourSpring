@@ -13,12 +13,12 @@ import java.util.List;
  * Created by juchtdi on 9/09/2015.
  */
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/users")
 public class UserRestController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="users", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public List<User> getUsers(){
         return userService.findAll();
     }

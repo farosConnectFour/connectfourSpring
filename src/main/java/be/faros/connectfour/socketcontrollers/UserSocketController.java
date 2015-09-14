@@ -32,7 +32,6 @@ public class UserSocketController {
     private SimpMessagingTemplate template;
 
     @MessageMapping("/gamePlayed")
-    @SendTo("/topic/gamePlayed")
     public void gamePlayed(GamePlayed gamePlayed){
         Game game = gameService.findGameById(gamePlayed.getGameId());
         this.template.convertAndSend("/topic/lastGame", new GameDTO(game));

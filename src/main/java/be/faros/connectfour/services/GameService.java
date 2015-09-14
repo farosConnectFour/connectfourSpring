@@ -9,6 +9,6 @@ import java.util.List;
  * Created by juchtdi on 14/09/2015.
  */
 public interface GameService {
-    List<Game> find5LastGames();
+    List<Game> find3LastGames();
     Game findGameById(long gameId);
 }

@@ -1,13 +1,11 @@
 package be.faros.connectfour.services;
 
 import be.faros.connectfour.domain.Game;
-import be.faros.connectfour.dto.GameDTO;
 import be.faros.connectfour.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by juchtdi on 14/09/2015.
@@ -24,7 +22,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public List<Game> find5LastGames() {
-        return gameRepository.findFirst5ByOrderByGameIdDesc();
+    public List<Game> find3LastGames() {
+        return gameRepository.findFirst3ByOrderByGameIdDesc();
     }
 }
