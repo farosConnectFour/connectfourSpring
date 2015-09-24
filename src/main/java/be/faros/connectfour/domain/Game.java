@@ -22,7 +22,7 @@ public class Game implements Serializable{
     @ManyToOne
     @JoinColumn(name="player2")
     private User player2;
-    private boolean ranked;
+    private boolean rated;
     @ManyToOne
     @JoinColumn(name="winner")
     private User winner;
@@ -55,12 +55,12 @@ public class Game implements Serializable{
         this.player2 = player2;
     }
 
-    public boolean isRanked() {
-        return ranked;
+    public boolean isRated() {
+        return rated;
     }
 
-    public void setRanked(boolean ranked) {
-        this.ranked = ranked;
+    public void setRated(boolean rated) {
+        this.rated = rated;
     }
 
     public User getWinner() {

@@ -31,18 +31,8 @@ public class UserSocketController {
     @Autowired
     private SimpMessagingTemplate template;
 
-    @MessageMapping("/gamePlayed")
+    @MessageMapping("/")
     public void gamePlayed(GamePlayed gamePlayed){
-        Game game = gameService.findGameById(gamePlayed.getGameId());
-        this.template.convertAndSend("/topic/lastGame", new GameDTO(game));
 
-        User u1 = game.getPlayer1();
-        User u2 = game.getPlayer2();
-        List<User> userList = Arrays.asList(u1, u2);
-        //TODO REMOVE
-        u1.setPoints(new Double(Math.random() * 100 + 1000).intValue());
-        u2.setPoints(new Double(Math.random() * 100 + 1000).intValue());
-        //END REMOVE
-        this.template.convertAndSend("/topic/playerChanges", userList);
     }
 }

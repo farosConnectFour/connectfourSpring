@@ -19,11 +19,10 @@ public class CreateWebsocketBeans extends AbstractWebSocketMessageBrokerConfigur
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/topic");
-        config.setApplicationDestinationPrefixes("/app");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/gamePlayed").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/").setAllowedOrigins("*").withSockJS();
     }
 }

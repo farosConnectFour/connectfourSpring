@@ -14,15 +14,18 @@ public class GameDTO implements Serializable {
     private long gameId;
     private String player1;
     private String player2;
-    private boolean ranked;
+    private boolean rated;
     private String winner;
 
     public GameDTO(Game game){
         this.gameId = game.getGameId();
         this.player1 = game.getPlayer1().getName();
         this.player2 = game.getPlayer2().getName();
-        this.ranked = game.isRanked();
+        this.rated = game.isRated();
         this.winner = game.getWinner().getName();
+    }
+    public GameDTO(){
+
     }
 
     public long getGameId() {
@@ -49,12 +52,12 @@ public class GameDTO implements Serializable {
         this.player2 = player2;
     }
 
-    public boolean isRanked() {
-        return ranked;
+    public boolean isRated() {
+        return rated;
     }
 
-    public void setRanked(boolean ranked) {
-        this.ranked = ranked;
+    public void setRated(boolean rated) {
+        this.rated = rated;
     }
 
     public String getWinner() {
@@ -63,5 +66,9 @@ public class GameDTO implements Serializable {
 
     public void setWinner(String winner) {
         this.winner = winner;
+    }
+
+    private void lol(){
+
     }
 }
