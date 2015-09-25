@@ -22,7 +22,10 @@ public class GameDTO implements Serializable {
         this.player1 = game.getPlayer1().getName();
         this.player2 = game.getPlayer2().getName();
         this.rated = game.isRated();
-        this.winner = game.getWinner().getName();
+        if(game.getWinner() != null){
+            this.winner = game.getWinner().getName();
+        }
+
     }
     public GameDTO(){
 
